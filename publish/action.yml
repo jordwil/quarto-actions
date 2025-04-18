@@ -55,7 +55,7 @@ runs:
           TARGET="${{ inputs.target }}"
         fi
         if [ "${{ inputs.render }}" != "true" ]; then
-          uvx quarto publish $TARGET ${{ inputs.path }} --no-render --no-browser
+          uvx --from quarto-cli quarto publish $TARGET ${{ inputs.path }} --no-render --no-browser
         else
-          uvx quarto publish $TARGET ${{ inputs.path }} --no-browser
+          uvx --from quarto-cli quarto publish $TARGET ${{ inputs.path }} --no-browser
         fi
